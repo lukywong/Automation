@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weway.Automation.Publish", "Weway.Automation.Publish\Weway.Automation.Publish.csproj", "{FC173798-427F-4B1D-80DC-2BECAAB5C2C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weway.Automation.Publish.ConsoleUI", "Weway.Automation.Publish.ConsoleUI\Weway.Automation.Publish.ConsoleUI.csproj", "{C7430724-7768-468D-A745-B464F4187EE0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC173798-427F-4B1D-80DC-2BECAAB5C2C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC173798-427F-4B1D-80DC-2BECAAB5C2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC173798-427F-4B1D-80DC-2BECAAB5C2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC173798-427F-4B1D-80DC-2BECAAB5C2C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7430724-7768-468D-A745-B464F4187EE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7430724-7768-468D-A745-B464F4187EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7430724-7768-468D-A745-B464F4187EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7430724-7768-468D-A745-B464F4187EE0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
