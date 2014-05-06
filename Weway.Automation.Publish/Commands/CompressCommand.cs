@@ -10,13 +10,14 @@ namespace Weway.Automation.Publish.Commands
     public class CompressCommand : CommandBase
     {
         private IApplicationContext _applicationContext;
-        public CompressCommand(IEnumerable<string> srcFileList, string desFileName)
+
+        public CompressCommand(
+            IEnumerable<string> srcFileList,
+            string desFileName,
+            IEnumerable<string> exclusiveFileList = null)
         {
-            var srcFiles =
-                string.Join(
-                    " ", 
-                    srcFileList.Select(file => file.SurroundByQuote()));
-            _applicationContext = new RarCompressContext(srcFiles, desFileName);
+            _applicationContext = 
+                new RarCompressContext(srcFileList, desFileName, exclusiveFileList);
         }
 
         protected override IApplicationContext ApplicationContext
