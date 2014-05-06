@@ -8,7 +8,7 @@ namespace Weway.Automation.Publish.Utils
 {
     public static class StringExtensions
     {
-        public static string SurroundWith(this string s, string text)
+        public static string SurroundBy(this string s, string text)
         {
             if (string.IsNullOrEmpty(s))
             {
@@ -17,9 +17,9 @@ namespace Weway.Automation.Publish.Utils
             return text + s + text;
         }
 
-        public static string SurroundWithQuote(this string s)
+        public static string SurroundByQuote(this string s)
         {
-            return s.SurroundWith("\"");
+            return s.SurroundBy("\"");
         }
     }
 }

@@ -8,17 +8,16 @@ using Weway.Automation.Publish.Utils;
 
 namespace Weway.Automation.Publish.Context
 {
-    public class _7ZipDecompressContext : _7ZipContextBase
+    public class RarCompressContext : RarContextBase
     {
-        private const string ArgumentsTemplate = "-y x {0} -o{1}";
+        private const string ArgumentsTemplate = "a {0} {1}";
         private string _arguments;
-
-        public _7ZipDecompressContext(string srcFileName, string desPath)
+        public RarCompressContext(string srcFiles, string desFileName)
         {
             _arguments = string.Format(
                 ArgumentsTemplate,
-                srcFileName.SurroundByQuote(),
-                desPath.SurroundByQuote());
+                desFileName.SurroundByQuote(),
+                srcFiles);
         }
         public override string Arguments
         {

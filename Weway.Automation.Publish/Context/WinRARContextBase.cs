@@ -17,7 +17,7 @@ namespace Weway.Automation.Publish.Context
             {
                 return ApplicationHelper
                     .GetApplication(Application.WinRAR)
-                    .SurroundWithQuote();
+                    .SurroundByQuote();
             }
         }
         public abstract string Arguments { get; }

@@ -43,11 +43,13 @@
   <ItemGroup>
     <Compile Include="Commands\Command.cs" />
     <Compile Include="Commands\CommandBase.cs" />
+    <Compile Include="Commands\CompressCommand.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Context\IApplicationContext.cs" />
     <Compile Include="Context\RarContextBase.cs" />
-    <Compile Include="Context\WinRARContextBase.cs" />
     <Compile Include="Context\RarDecompressContext.cs" />
+    <Compile Include="Context\WinRARContextBase.cs" />
+    <Compile Include="Context\RarCompressContext.cs" />
     <Compile Include="Context\WinRARDecompressContext.cs" />
     <Compile Include="Context\_7ZipContextBase.cs" />
     <Compile Include="Context\_7ZipDecompressContext.cs" />

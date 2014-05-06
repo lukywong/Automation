@@ -17,7 +17,7 @@ namespace Weway.Automation.Publish.Context
             get
             {
                 var path = ApplicationHelper.GetApplicationPath(Application.WinRAR);
-                return Path.Combine(path, Name).SurroundWithQuote();
+                return Path.Combine(path, Name).SurroundByQuote();
             }
         }
         public abstract string Arguments { get; }

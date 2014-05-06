@@ -17,8 +17,8 @@ namespace Weway.Automation.Publish.Context
         {
             _arguments = string.Format(
                 ArgumentsTemplate,
-                srcFileName.SurroundWithQuote(),
-                desPath.SurroundWithQuote());
+                srcFileName.SurroundByQuote(),
+                desPath.SurroundByQuote());
         }
         public override string Arguments
         {
