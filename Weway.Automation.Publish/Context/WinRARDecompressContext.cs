@@ -8,23 +8,30 @@ using Weway.Automation.Publish.Utils;
 
 namespace Weway.Automation.Publish.Context
 {
-    public class WinRARDecompressContext : WinRARContextBase
+    public class WinRARDecompressContext : WinRARContextBase, IDecompressContext
     {
         private const string ArgumentsTemplate = "-y x {0} {1}";//"-inul -o+ -p- x {0} {1}"
-        private string _arguments;
 
         public WinRARDecompressContext(string srcFileName, string desPath)
         {
-            _arguments = string.Format(
-                ArgumentsTemplate,
-                srcFileName.SurroundByQuote(),
-                desPath.SurroundByQuote());
+            SrcFileName = srcFileName;
+            DesPath = desPath;
         }
+
+        public string SrcFileName { get; set; }
+
+        public string DesPath { get; set; }
+
         public override string Arguments
         {
             get
             {
-                return _arguments;
+                var arguments =
+                    string.Format(
+                        ArgumentsTemplate,
+                        SrcFileName.SurroundByQuote(),
+                        DesPath.SurroundByQuote());
+                return arguments;
             }
         }
     }

@@ -8,37 +8,50 @@ using Weway.Automation.Publish.Utils;
 
 namespace Weway.Automation.Publish.Context
 {
-    public class RarCompressContext : RarContextBase
+    public class RarCompressContext : RarContextBase, ICompressContext
     {
         private const string ArgumentsTemplate = "a -ep1 {0} {1} {2}";
         private const string ExclusiveSwitch = "-x";
         private const string CompressExtension = ".rar";
-        private string _arguments;
+
+        public RarCompressContext()
+        {
+        }
+
         public RarCompressContext(
             IEnumerable<string> srcFileList,
             string desFileName,
             IEnumerable<string> exclusiveFileList = null)
         {
-            var srcFiles =
-                string.Join(
-                    " ",
-                    srcFileList.Select(file => file.SurroundByQuote()));
-
-            var exclusiveFiles = 
-                exclusiveFileList == null ? "" : string.Join(" ",
-                    exclusiveFileList.Select(file => ExclusiveSwitch + file.SurroundByQuote()));
-
-            _arguments = string.Format(
-                ArgumentsTemplate,
-                exclusiveFiles,
-                (desFileName + CompressExtension).SurroundByQuote(),
-                srcFiles);
+            SourceFileList = srcFileList;
+            DesFileName = desFileName;
+            ExclusiveFileList = exclusiveFileList;
         }
+
+        public IEnumerable<string> SourceFileList { get; set; }
+        public string DesFileName { get; set; }
+        public IEnumerable<string> ExclusiveFileList { get; set; }
+
         public override string Arguments
         {
             get
             {
-                return _arguments;
+                var srcFiles =
+                string.Join(
+                    " ",
+                    SourceFileList.Select(file => file.SurroundByQuote()));
+
+                var exclusiveFiles =
+                    ExclusiveFileList == null ? "" : string.Join(" ",
+                        ExclusiveFileList.Select(file => ExclusiveSwitch + file.SurroundByQuote()));
+
+                var arguments = string.Format(
+                    ArgumentsTemplate,
+                    exclusiveFiles,
+                    (DesFileName + CompressExtension).SurroundByQuote(),
+                    srcFiles);
+
+                return arguments;
             }
         }
     }

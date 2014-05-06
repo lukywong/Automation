@@ -46,6 +46,8 @@
     <Compile Include="Commands\CompressCommand.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Context\IApplicationContext.cs" />
+    <Compile Include="Context\ICompressContext.cs" />
+    <Compile Include="Context\IDecompressContext.cs" />
     <Compile Include="Context\RarContextBase.cs" />
     <Compile Include="Context\RarDecompressContext.cs" />
     <Compile Include="Context\WinRARContextBase.cs" />
