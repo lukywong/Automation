@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace Weway.Automation.Publish.Commands
             };
 
             var process = new Process { StartInfo = startInfo };
-
+            LogHelper.LogPath = Directory.GetCurrentDirectory();
             LogHelper.Info(
                     "Executing command: " +
                     ApplicationContext.ApplicationName + " " +
